@@ -19,17 +19,17 @@ public:
     /* network layer */
 
     bool startNetwork(int nthread);
-    
+
     bool listenAt(const std::string& ip, int port, AcceptorCallback* pAcceptorCb);
-    
+
     bool connectTo(const std::string& ip, int port, ConnectorCallback* pConnectorCb, int reConnectTime);
-    
+
     void stopNetwork();
-    
+
     void postCloseSocket(const TcpSocketPtr& ptr);
 
 private:
- 
+
 
 private:
     /*TODO logic layer*/
