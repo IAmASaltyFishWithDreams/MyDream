@@ -12,16 +12,16 @@ public:
     ~BoostNetwork();
 public:
     /*TODO tcp socket circuit*/
-    void init(int threads);
+    void init(uint32 threads);
     
     /* close network*/
     void close();
     /*stop network*/
     void stop();
     /* lisen network*/
-    bool listenAt(const std::string& ip, int port, AcceptorCallback* pAcceptorCb);
+    bool listenAt(const std::string& ip, uint16 port, AcceptorCallback* pAcceptorCb);
     /* connect net work*/
-    bool connectTO(const std::string& ip, int port, ConnectorCallback* pConnectorCb, int reConnectTime);
+    bool connectTO(const std::string& ip, uint16 port, ConnectorCallback* pConnectorCb, uint32 reConnectTime);
     /* close socket*/
     void postCloseSocket( const TcpSocketPtr& s);
 
@@ -38,7 +38,7 @@ protected:
 private:
     boost::asio::io_service m_ios;                                  /* server instance*/
     boost::shared_ptr<boost::asio::io_service::work> m_workPtr;     /* server control*/
-    UTILS::Thread_pool m_threadPool;                                /* thread pool*/
+    UTILS::ThreadPool m_threadPool;                                /* thread pool*/
 
     std::map<int, AcceptorPtr> m_lisetenMap;                        /* map acceptor */
     std::vector<ConnectorPtr> m_connectVec;                         /* vec connect*/

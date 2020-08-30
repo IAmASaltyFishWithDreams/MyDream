@@ -1,8 +1,8 @@
 #ifndef __SERVER_CORE_BASE_SERVER__
 #define __SERVER_CORE_BASE_SERBER__
 
-#include <iostream>
 #include "../common/macro.hpp"
+#include "../utils/log.hpp"
 NS_SERVICE_CORE_BEGIN
 
 class Base_server

@@ -18,11 +18,11 @@ public:
     /* specific server */
     /* network layer */
 
-    bool startNetwork(int nthread);
+    bool startNetwork(uint32 nthread);
 
-    bool listenAt(const std::string& ip, int port, AcceptorCallback* pAcceptorCb);
+    bool listenAt(const std::string& ip, uint16 port, AcceptorCallback* pAcceptorCb);
 
-    bool connectTo(const std::string& ip, int port, ConnectorCallback* pConnectorCb, int reConnectTime);
+    bool connectTo(const std::string& ip, uint16 port, ConnectorCallback* pConnectorCb, uint32 reConnectTime);
 
     void stopNetwork();
 
