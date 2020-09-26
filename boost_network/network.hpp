@@ -1,6 +1,8 @@
 #include <map>
 #include <vector>
 
+
+#include "acceptor.hpp"
 #include "../common/macro.hpp"
 #include "../utils/thread_pool.hpp"
 
@@ -12,7 +14,7 @@ public:
     ~BoostNetwork();
 public:
     /*TODO tcp socket circuit*/
-    void init(uint32 threads);
+    void init(uint32 threadNum);
     
     /* close network*/
     void close();

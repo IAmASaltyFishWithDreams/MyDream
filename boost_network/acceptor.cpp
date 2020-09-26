@@ -1,0 +1,5 @@
+#include "acceptor.hpp"
+
+NS_BOOST_NETWORK_BEGIN
+
+NS_BOOST_NETWORK_END

@@ -1,5 +1,5 @@
-#ifndef __UTILS_THREADPOOL_HPP
-#define __UTILS_THREADPOOL_HPP
+#ifndef __UTILS_THREADPOOL_HPP__
+#define __UTILS_THREADPOOL_HPP__
 
 #include <vector>
 
