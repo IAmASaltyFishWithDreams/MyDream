@@ -1,7 +1,7 @@
 #ifndef __SERVER_CORE_BASE_SERVER__
 #define __SERVER_CORE_BASE_SERBER__
 
-#include "../common/macro.hpp"
+#include "../utils/macro.hpp"
 #include "../utils/log.hpp"
 NS_SERVICE_CORE_BEGIN
 

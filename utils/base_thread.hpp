@@ -2,8 +2,8 @@
 #define __UTILS_BASE_THREAD_HPP__
 #include <thread>
 #include <memory>
-#include "../common/macro.hpp"
-#include "noncopyable.h"
+#include "macro.hpp"
+#include "noncopyable.hpp"
 
 NS_UTILS_BEGIN
 class BaseThread : public Noncopyable

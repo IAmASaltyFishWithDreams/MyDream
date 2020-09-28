@@ -1,7 +1,7 @@
 #ifndef __UTILS_NONCOPYABLE_H__
 #define __UTILS_NONCOPYABLE_H__
 
-#include "../common/macro.hpp"
+#include "macro.hpp"
 
 NS_UTILS_BEGIN
 

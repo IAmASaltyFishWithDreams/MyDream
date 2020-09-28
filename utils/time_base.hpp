@@ -1,7 +1,7 @@
 #ifndef __UTILS_TIME_BASE_HPP__
 #define __UTILS_TIME_BASE_HPP__
 #include <chrono>
-#include "../common/macro.hpp"
+#include "macro.hpp"
 NS_UTILS_BEGIN
 
 //system time

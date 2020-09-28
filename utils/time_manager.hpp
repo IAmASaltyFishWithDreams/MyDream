@@ -7,7 +7,7 @@
 #include "boost/asio/io_service.h"
 #include "boost/system/error_code.h"
 
-#include "../common/macro.hpp"
+#include "macro.hpp"
 
 NS_UTILS_BEGIN
 

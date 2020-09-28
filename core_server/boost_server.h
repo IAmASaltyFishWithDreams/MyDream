@@ -3,7 +3,7 @@
 
 #include "base_server.hpp"
 #include "../boost_network/network.hpp"
-#include "../common/macro.hpp"
+#include "../utils/macro.hpp"
 
 NS_SERVICE_CORE_BEGIN
 /**
@@ -20,7 +20,7 @@ public:
 
     bool startNetwork(uint32 nthread);
 
-    bool listenAt(const std::string& ip, uint16 port, AcceptorCallback* pAcceptorCb);
+    bool listenAt(const std::string& ip, uint16 port, BOOST_NETWORK::AcceptorCallback* pAcceptorCb);
 
     bool connectTo(const std::string& ip, uint16 port, ConnectorCallback* pConnectorCb, uint32 reConnectTime);
 
@@ -38,5 +38,5 @@ private:
     BOOST_NETWORK::BoostNetwork m_network;
 };
 
-#endif
 NS_SERVICE_CORE_END
+#endif

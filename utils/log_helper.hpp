@@ -2,7 +2,7 @@
 #define __UTILS_LOGHELPER_HPP__
 #include "string"
 
-#include "../common/macro.hpp"
+#include "macro.hpp"
 #include "time_helper.hpp"
 
 NS_UTILS_BEGIN

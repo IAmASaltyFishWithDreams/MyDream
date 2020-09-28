@@ -1,6 +1,6 @@
 #ifndef __UTILS_LOG_HPP__
 #define __UTILS_LOG_HPP__
-#include "../common/macro.hpp"
+#include "macro.hpp"
 NS_UTILS_BEGIN
 
 //close all attr 0m black, 31m red, 32m green, 33m yellow, 34 blue, 35m purple, 36m deep green, 37m white

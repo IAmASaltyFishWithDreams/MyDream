@@ -8,7 +8,7 @@
 #include <boost/asio/ip/tcp.hpp>
 
 #include "io_interface.hpp"
-#include "../common/macro.hpp"
+#include "../utils/macro.hpp"
 #include "../utils/noncopyable.hpp"
 
 NS_BOOST_NETWORK_BEGIN
