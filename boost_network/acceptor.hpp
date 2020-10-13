@@ -19,7 +19,7 @@ class Acceptor : public IoInterface
 {
 public:
     //notes explicit cconstruct
-    explicit Acceptor(const boost::asio::io_service& m_ios, const std::string& listenIp, uint16 port, IoCallback* pIoCallback);
+    explicit Acceptor(const boost::asio::io_service& ios, const std::string& listenIp, uint16 port, IoCallback* pIoCallback);
 
 public:
 
@@ -45,7 +45,7 @@ private:
 
 private:
     uint16 m_listenPort;
-    std::string m_lisentIp;
+    std::string m_listenIp;
     std::vector<TcpSocketPtr> m_socketVec;
 
     boost::asio::io_service::strand m_strand;

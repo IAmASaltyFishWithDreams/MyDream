@@ -56,7 +56,7 @@ public:
 //notes ADT IO interface
 class IoInterface {
 public:
-    explicit IoInterface(boost::asio::io_service& ios, IoCallback* pIoCallback): m_ios(ios), m_ioCallback(ioCallback) {}
+    explicit IoInterface(boost::asio::io_service& ios, IoCallback* pIoCallback): m_ios(ios), m_ioCallback(pIoCallback) {}
     ~IoInterface() {}
 
 public:
