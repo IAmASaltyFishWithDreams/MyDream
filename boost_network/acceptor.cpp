@@ -4,7 +4,7 @@
 #include "../utils/log.hpp"
 
 NS_BOOST_NETWORK_BEGIN
-USING_NS_UTILS
+USING_NS_UTILS;
 
 Acceptor::Acceptor(boost::asio::io_service& ios, const std::string& listenIp, uint16 port, IoCallback* pIoCallback)
     : IoInterface(ios,pIoCallback),
@@ -39,18 +39,18 @@ void Acceptor::onActiveSocketClose(const TcpSocketPtr& s) {
     }
     m_strand.post([this,s]{
                   auto iter = std::find_if(m_socketVec.begin(),m_socketVec.end(),[s](const TcpSocketPtr& pSocketPtr){
-                                           //notes s : TcpSocketPtr& s; pSocketPtr : m_socketVec
-                                           if (s == pSocketPtr) {
-                                                return true;
-                                           }
-                                           return false;
-                                           });
+                    //notes s : TcpSocketPtr& s; pSocketPtr : m_socketVec
+                    if (s == pSocketPtr) {
+                        return true;
+                    }
+                    return false;
+                  });
                   if (iter == m_socketVec.end()) {
                     return;
                   }
                   iter->close();
                   m_socketVec.erase(s);
-                  });
+                });
 }
 
 void Acceptor::onPassiveSocketClose(const TcpSocketPtr& s) {
@@ -60,17 +60,17 @@ void Acceptor::onPassiveSocketClose(const TcpSocketPtr& s) {
     }
     m_strand.post([this,s]{
                   auto iter = std::find_if(m_socketVec.begin(),m_socketVec.end(),[s]( const TcpSocketPtr& pSocketPtr){
-                                           if (s == pSocketPtr) {
-                                                return true;
-                                           }
-                                           return false;
-                                           });
+                    if (s == pSocketPtr) {
+                        return true;
+                    }
+                    return false;
+                  });
                   if (iter == m_socketVec.end()) {
                     return;
                   }
                   m_ioCallback->close(s);
                   m_socketVec.erase(s);
-                  });
+                });
 }
 
 bool Acceptor::listen() {

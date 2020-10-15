@@ -4,8 +4,8 @@
 #include <boost/asio/ip/tcp.hpp>
 #include <boost/asio/io_service_strand.hpp>
 
+#include "buffer.hpp"
 #include "io_interface.hpp"
-#include "message.hpp"
 #include "../utils/macro.hpp"
 #include "../utils/noncopyable.hpp"
 

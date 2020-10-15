@@ -10,7 +10,7 @@ void BoostNetwork::init(uint32 threadNum) {
         log_error("threadNum must > 0, please check threadNum");
     }
     m_workPtr.reset(new boost::asio::io_service::work(m_ios));
-    m_threadPool.create_thread(boost::bind(boost::asio::io_service::run,&m_ios),threadNum);
+    m_threadPool.create_thread(boost::bind(&boost::asio::io_service::run,&m_ios),threadNum);
 }
 
 void BoostNetwork::close() {
@@ -19,7 +19,7 @@ void BoostNetwork::close() {
 
     m_workPtr.reset();
     m_threadPool.join();
-    //notes why
+    //notes why solve 2020.10.15 clearListen() clear inside; m_connectVec.clear() clear exteral
     m_connectVec.clear();
     m_lisetenMap.clear();
 }
@@ -50,13 +50,29 @@ bool BoostNetwork::listenAt(const std::string& ip, uint16 port, AcceptorCallback
    return true;
 }
 
-bool BoostNetwork::connectTo(const std::string& ip, uint16 port, AcceptorCallback* pAcceptorCb, int32 reConnectTime) {
-    //TODO to be completed
+bool BoostNetwork::connectTo(const std::string& ip, uint16 port, ConnectorCallback* pConnectCb, int32 reConnectTime) {
+    if (pConnectCb == NULL) {
+        log_error("pConnectCb == NILL");
+        return false;
+    }
+    //start connect
+    ConnectorPtr pConnectPtr = std::make_shared<ConnectorPtr>(new Connector(m_ios,ip,port,pConnectCb,reConnectTime));
+    m_connectVec.push_back(pConnectPtr);
     return true;
 }
 
-void postCloseSocket(const TcpSocketPtr& s) {
-    //TODO to be completed
+void BoostNetwor::postCloseSocket(const TcpSocketPtr& s) {
+    if (s == NULL) {
+        log_error("TcoSocketPtr == NULL");
+        return
+    }
+    IoInterface* pInterface = s->getIoInterface();
+    if (pInterface == NULL){
+        log_error("pInterface == NULL at socket [%d][%s:%d]", s->getSocketId(), s->getIp().c_str(), s->getPort());
+        return;
+    }
+    //active socket close
+    pInterface->onActiveSocketClose(s);
 }
 
 void BoostNetwork::stopListen() {

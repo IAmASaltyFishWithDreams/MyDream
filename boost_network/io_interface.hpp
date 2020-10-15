@@ -2,7 +2,6 @@
 #define __BOOST_NETWORK_IO_INTERFACE_HPP__
 
 #include <memory>
-
 #include <boost/asio/io_service.hpp>
 
 #include "message.hpp"

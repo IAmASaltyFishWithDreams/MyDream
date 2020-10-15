@@ -1,8 +1,13 @@
+#ifndef __BOOST_NETWORK_NETWORK_HPP__
+#define __BOOST_NETWORK_NETWORK_HPP__
+
 #include <map>
 #include <vector>
 
-
 #include "acceptor.hpp"
+#include "connector.hpp"
+#include "io_interface.hpp"
+#include "tcp_socket.hpp"
 #include "../utils/macro.hpp"
 #include "../utils/thread_pool.hpp"
 
@@ -23,7 +28,7 @@ public:
     /* lisen network*/
     bool listenAt(const std::string& ip, uint16 port, AcceptorCallback* pAcceptorCb);
     /* connect net work*/
-    bool connectTO(const std::string& ip, uint16 port, ConnectorCallback* pConnectorCb, uint32 reConnectTime);
+    bool connectTo(const std::string& ip, uint16 port, ConnectorCallback* pConnectorCb, uint32 reConnectTime);
     /* close socket*/
     void postCloseSocket( const TcpSocketPtr& s);
 
@@ -46,3 +51,4 @@ private:
     std::vector<ConnectorPtr> m_connectVec;                         /* vec connect*/
 };
 NS_BOOST_NETWORK_END
+#endif

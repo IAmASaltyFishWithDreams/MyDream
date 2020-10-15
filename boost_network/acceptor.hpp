@@ -18,7 +18,7 @@ class Acceptor : public IoInterface
                  ,public UTILS::Noncopyable
 {
 public:
-    //notes explicit cconstruct
+    //notes explicit construct
     explicit Acceptor(const boost::asio::io_service& ios, const std::string& listenIp, uint16 port, IoCallback* pIoCallback);
 
 public:
