@@ -1,19 +1,18 @@
-#ifndef __SERVER_CORE_BASE_SERVER__
-#define __SERVER_CORE_BASE_SERBER__
+#ifndef __SERVICE_CORE_BASE_SERVER_HPP__
+#define __SERVICE_CORE_BASE_SERBER_HPP__
 
 #include "../utils/macro.hpp"
-#include "../utils/log.hpp"
 NS_SERVICE_CORE_BEGIN
 
-class Base_server
+class BaseServer
 {
 public:
-    Base_server();
-    ~Base_server();
+    BaseServer();
+    ~BaseServer();
 public :
-    static Base_server * getInstance();
+    static BaseServer * getInstance();
     void setInterrupt() { m_isInterruptFlag = true; }
-    bool getInterrupt() { return m_isInterruptFlag; }
+    bool isInterrupt() { return m_isInterruptFlag; }
 
 public:
     /* business layer */
@@ -40,7 +39,7 @@ public:
     virtual void interruptServer() = 0;
 
 private:
-    static Base_server * m_server;          // server
+    static BaseServer * m_server;          // server
     bool m_isInterruptFlag = false;         // sign 1 byte in win32
 };
 /* memory size 1 + 1 + 2 = 4 byte. ps: 4 constitute 1(translater)+ 1(m_isInterruptFlag) +2(alignment)*/

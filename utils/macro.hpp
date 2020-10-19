@@ -8,7 +8,7 @@
 
 #define  NS_SERVICE_CORE_BEGIN namespace SERVICE_CORE {
 #define  NS_SERVICE_CORE_END }
-#define  USING_NS_SERVICE_CIRE using namespace SERVICE_CORE
+#define  USING_NS_SERVICE_CORE using namespace SERVICE_CORE
 
 #define  NS_BOOST_NETWORK_BEGIN namespace BOOST_NETWORK {
 #define  NS_BOOST_NETWORK_END }
