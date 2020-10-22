@@ -7,7 +7,7 @@
 #include "../utils/scope_gourd.hpp"
 
 NS_BOOST_NETWORK_BEGIN
-USING_NS_UTILS;
+USING_NS_UTILS
 TcpSocket::TcpSocket(boost::asio::io_sevice& ios, boost::asio::ip::tcp::socket socket, boost::asio::ip::tcp::endpoint& addr, IoInterface* pInterface, int32 index)
     : m_strand(ios)
     , m_socket(std::move(socket))

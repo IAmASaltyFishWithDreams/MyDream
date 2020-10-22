@@ -8,20 +8,19 @@
 
 #define  NS_SERVICE_CORE_BEGIN namespace SERVICE_CORE {
 #define  NS_SERVICE_CORE_END }
-#define  USING_NS_SERVICE_CORE using namespace SERVICE_CORE
+#define  USING_NS_SERVICE_CORE using namespace SERVICE_CORE;
 
 #define  NS_BOOST_NETWORK_BEGIN namespace BOOST_NETWORK {
 #define  NS_BOOST_NETWORK_END }
-#define  USING_NS_BOOST_NETWORK using namespace BOOST_NETWORK
+#define  USING_NS_BOOST_NETWORK using namespace BOOST_NETWORK;
 
 #define  NS_UTILS_BEGIN namespace UTILS {
 #define  NS_UTILS_END }
-#define  USING_NS_UTILS using namespace UTILS
+#define  USING_NS_UTILS using namespace UTILS;
 
-/* #define USING_BOOST_SERVER_BEGIN namespace BOOST_SERVER { */
-/* #define USING_BOOST_SERVER_END } */
-/* #define USING_SINGLE_SERVER_BEGIN namespace SINGLE_SERVER { */
-/* #define USING_SINGLE_SERVER_END } */
+#define NS_PROTOCPP_BEGIN namespace PROTOCPP {
+#define NS_PROTOCPP_END }
+#define USING_NS_PROTOCPP using namespace PROTOCPP;
 
 typedef char int8;
 typedef short int16;

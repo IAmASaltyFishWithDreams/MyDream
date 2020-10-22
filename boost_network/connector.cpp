@@ -6,7 +6,7 @@
 #include "../utils/log.hpp"
 
 NS_BOOST_NETWORK_BEGIN
-USING_NS_UTILS;
+USING_NS_UTILS
 
 Connector::Connector(const boost::asio::io_service& ios, const std::string& ip, uint16 port, IoCallback* pCallback, uint32 reconnectTime)
     : IoInterface(ios,pCallback)

@@ -4,7 +4,7 @@
 #include "../utils/log.hpp"
 
 NS_BOOST_NETWORK_BEGIN
-USING_NS_UTILS;
+USING_NS_UTILS
 
 Acceptor::Acceptor(boost::asio::io_service& ios, const std::string& listenIp, uint16 port, IoCallback* pIoCallback)
     : IoInterface(ios,pIoCallback),
