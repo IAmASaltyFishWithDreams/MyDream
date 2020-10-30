@@ -17,7 +17,7 @@ public:
    typedef std::function<bool(const BOOST_NETWORK::TcpSocketPtr& s, const BOOST_NETWORK::MsgBufPtr& buf)> MsgHandlerFunc;
 
 public:
-   bool registerMsg(int16 cmd, MsgHandlerFunc func) {
+   bool registerFunc(int16 cmd, MsgHandlerFunc func) {
        if (func == NULL) {
            log_error("func == NULL for cmd [%d:%s]", cmd, CMD_DESC(cmd));
            return false;
