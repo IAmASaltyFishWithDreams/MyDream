@@ -31,7 +31,7 @@ public:
        return true;
    }
 
-   bool msgHandler(const BOOST_NETWORK::TcpSocketPtr& s, int16 cmd, const BOOST_NETWORK::MsgBufPtr& buf,const char* name ) {
+   bool msgHandler(const BOOST_NETWORK::TcpSocketPtr& s, uint16 cmd, const BOOST_NETWORK::MsgBufPtr& buf,const char* name ) {
        auto iter = m_funcMap.find(cmd);
        if (iter == m_funcMap.end() || iter->second == NULL) {
            log_error("cmd [%d:%s] can not find ", cmd, CMD_DESC(cmd));
