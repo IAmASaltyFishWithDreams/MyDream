@@ -13,7 +13,7 @@ public:
     }
 public:
     template<typename Fuc>
-    void create_thread(Fuc f ,size_t threadNum){
+    void createThread(Fuc f ,size_t threadNum){
         BaseThreadPtr ptr = std::make_shared<BaseThreadPtr>(f);
         m_threadPool_vec.push_back(ptr);
     }

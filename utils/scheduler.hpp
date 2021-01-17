@@ -61,7 +61,7 @@ private:
 private:
     //工作流程
     uint32 m_mode;                           //工作模式
-    bool m_start;       
+    bool m_start;
 
     std::mutex m_startMutex;                //开始工作锁
 

@@ -16,7 +16,7 @@ public:
     void wait();
     //start work true all / false one
     void notify(bool all);
-    //add task and acitve 
+    //add task and acitve
     void pushWithNotify(UnitPtr& ptr);
     //add task but not acitve
     void pushWithoutNotify(UnitPtr& ptr);

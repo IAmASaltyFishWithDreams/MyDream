@@ -18,7 +18,7 @@ enum {
     STATUS_RUN = 1,
 };
 
-class SchedulerUnit : public UnitBase, Noncopyable {
+class SafeUnit : public UnitBase, Noncopyable {
 friend SchedulerSafeUnit;
 private:
     void complete() { func(); }
@@ -41,7 +41,7 @@ public:
     void post(UnitFunc func);
 
     SchedulerBase& m_scheduler;
-    std::shared_ptr<SchedulerUnit> m_unitPtr;
+    std::shared_ptr<SafeUnit> m_unitPtr;
 };
 
 typedef std::shared_ptr<SchedulerSafeUnit> SchedulerSafeUnitPtr;

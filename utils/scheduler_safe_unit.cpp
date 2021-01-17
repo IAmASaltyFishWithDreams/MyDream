@@ -4,7 +4,7 @@ NS_UTILS_BEGIN
 
 SchedulerSafeUnit::SchedulerSafeUnit(SchedulerBase& base)
 : m_scheduler(base) {
-    m_unitPtr = std::shared_ptr<SchedulerUnit>();
+    m_unitPtr = std::shared_ptr<SafeUnit>();
     m_unitPtr->func = std::bind(&SchedulerSafeUnit::complete, this);
     m_unitPtr->status.store(STATUS_EMPTY);
 }

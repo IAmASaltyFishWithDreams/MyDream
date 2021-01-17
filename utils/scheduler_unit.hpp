@@ -9,7 +9,7 @@
 #include "scheduler_base.hpp"
 
 NS_UTILS_BEGIN
-class SchedulerUnit : public Noncopyable,UnitBase {
+class SchedulerUnit : public UnitBase,Noncopyable {
 public:
     SchedulerUnit(UnitFunc func): m_func(func) {}
     void complete() { m_func(); };

@@ -15,7 +15,7 @@ bool DBManager::init(uint32 threadCount, const DBInitData &db, const std::vector
         threadCount = DB_MANAGER_THREAD_MIN_COUNT;
     }
     ret = m_dbPool.init(db.dbKind, db.connMaxCount, db.connInitcount, db.user, db.password);
-    m_threadPool.creatThread([this](){ m_scheduler.run(); }, threadCount);
+    m_threadPool.createThread([this](){ m_scheduler.run(); }, threadCount);
     m_scheduler.start();
     ret = loadTableField(tableVec);
     return ret;
